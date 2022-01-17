@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Loading from './component/loading/loading.component';
 import Tours from "./component/tours/tours.component";
+import data from "./data";
 
 const url = 'https://course-api.com/react-tours-project';
 
@@ -13,6 +14,7 @@ function App() {
     try {
       const response = await fetch(url);
       const tours = await response.json();
+      // const tours = data;
       setTours(tours);
       setLoading(false);
     } catch (error) {
