@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Tours = () => {
+const Loading = () => {
     return (
         <div>
-            
+            Loading
         </div>
     );
 }
 
-export default Tours;
+export default Loading;
