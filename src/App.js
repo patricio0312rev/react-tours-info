@@ -12,13 +12,12 @@ function App() {
     setLoading(true);
     try {
       const response = await fetch(url);
-      const tours = await fetch.json(response);
+      const tours = await response.json();
       setTours(tours);
+      setLoading(false);
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
-    }
+    } 
   }
 
   useEffect(() => {
@@ -31,13 +30,13 @@ function App() {
         <Loading />
       </main>
     );
-  } 
-
-  return (
-    <main>
-      <Tours tours={tours} />
-    </main>
-  );
+  } else {
+    return (
+      <main>
+        <Tours tours={tours} />
+      </main>
+    );
+  }
 }
 
 export default App;
